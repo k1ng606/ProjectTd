@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://yyns4ddkq5fk"]
+
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_n462a"]
+[ext_resource type="Texture2D" uid="uid://c7pm7a83mxb4a" path="res://assets/ball.png" id="2_h2a1g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_telsl"]
+radius = 7.0
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_n462a")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_h2a1g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_telsl")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+path_desired_distance = 1.0
+path_max_distance = 20.0
+path_postprocessing = 1
+debug_enabled = true
+
+[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
