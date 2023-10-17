@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2ld3f6juix5a"]
+
+[ext_resource type="Texture2D" uid="uid://d4kpx43cyaovd" path="res://assets/tileTerrainSheet.png" id="1_78h5d"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xu1nd"]
+texture = ExtResource("1_78h5d")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_r5hqc"]
+sources/0 = SubResource("TileSetAtlasSource_xu1nd")
+
+[node name="Level" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_r5hqc")
+format = 2
