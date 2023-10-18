@@ -17,9 +17,4 @@ texture = ExtResource("2_h2a1g")
 shape = SubResource("CircleShape2D_telsl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-path_desired_distance = 1.0
-path_max_distance = 20.0
-path_postprocessing = 1
 debug_enabled = true
-
-[connection signal="target_reached" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_target_reached"]
