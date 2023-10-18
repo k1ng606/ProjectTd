@@ -14,7 +14,6 @@ func _ready() -> void:
 	
 	position = enemy_spawn_position
 
-	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
 
 
