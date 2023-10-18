@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
-@onready var targetPosition : Vector2 = $"../EnemyTarget".position
-@onready var enemySpawnPosition : Vector2 = $"../EnemySpawn".position
+@onready var target_position : Vector2 = $"../EnemyTarget".position
+@onready var enemy_spawn_position : Vector2 = $"../EnemySpawn".position
 @onready var navigation_agent := $NavigationAgent2D
+
 
 const speed := 200
 
@@ -11,7 +12,7 @@ func _ready() -> void:
 	navigation_agent.path_desired_distance = 4.0
 	navigation_agent.target_desired_distance = 4.0
 	
-	position = enemySpawnPosition
+	position = enemy_spawn_position
 
 	# Make sure to not await during _ready.
 	call_deferred("actor_setup")
@@ -19,7 +20,7 @@ func _ready() -> void:
 
 func actor_setup()-> void:
 	await get_tree().physics_frame
-	set_movement_target(targetPosition)
+	set_movement_target(target_position)
 	
 func set_movement_target(movement_target: Vector2):
 	navigation_agent.target_position = movement_target

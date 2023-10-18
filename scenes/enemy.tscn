@@ -17,4 +17,4 @@ texture = ExtResource("2_h2a1g")
 shape = SubResource("CircleShape2D_telsl")
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-debug_enabled = true
+path_postprocessing = 1
