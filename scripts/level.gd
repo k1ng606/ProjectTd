@@ -26,16 +26,3 @@ func _ready() -> void:
 	
 	mob_spawn_timer.timeout.connect(func() : spawn_enemy())
 	
-	
-	
-
-#func spawn_enemies(number_of_enemies_to_spawn:int = 1):
-#	for i in number_of_enemies_to_spawn:
-#		add_child(enemy.instantiate())
-
-#func _ready()-> void:
-#	spawn_enemies()
-	
-	
-#func timer_setup() -> void:
-#	get_tree().create_timer(3).timeout.connect(func() : spawn_enemies())
